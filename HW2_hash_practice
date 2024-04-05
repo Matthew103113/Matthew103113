@@ -1,0 +1,19 @@
+with open("C:\Users\user\Downloads\hw2_data.txt", 'r') as file:
+    lines = file.readlines()
+
+# 建立字典來存放字元和出現次數
+char_count = {}
+
+# 逐行讀入並統計
+for line in lines:
+    char = line.strip()  # 移除換行符號
+    char_count[char] = char_count.get(char, 0) + 1
+
+# 計算不重複的英文字數量
+unique_chars = len(char_count)
+
+# 印出結果
+print(f"總共有 {unique_chars} 個不重複的英文字")
+print("每個英文字出現次數如下:")
+for char, count in char_count.items():
+    print(f"{char}: {count}")
